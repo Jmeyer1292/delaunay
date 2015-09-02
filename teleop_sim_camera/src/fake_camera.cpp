@@ -17,11 +17,11 @@ struct FakeCameraParams
 FakeCameraParams loadParams(ros::NodeHandle& nh)
 {
   FakeCameraParams params;
-  params.frame = nh.param<std::string>("frame", "camera");
-  params.width = nh.param<int>("image_width", 640);
-  params.height = nh.param<int>("image_height", 480);
-  params.rate = nh.param<double>("rate", 60.0);
-  params.topic = nh.param<std::string>("topic", "camera");
+  nh.param<std::string>("frame", params.frame, "camera");
+  nh.param<int>("image_width", params.width, 640);
+  nh.param<int>("image_height",params.height, 480);
+  nh.param<double>("rate", params.rate, 60.0);
+  nh.param<std::string>("topic", params.topic, "camera");
   return params;
 }
 

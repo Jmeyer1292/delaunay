@@ -93,7 +93,7 @@ catkin_package(
 ## Build ##
 ###########
 
-add_definitions(-std=c++11)
+add_definitions(-std=c++11 -DEIGEN_DONT_VECTORIZE -DEIGEN_DISABLE_UNALIGNED_ARRAY_ASSERT)
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
